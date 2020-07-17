@@ -21,11 +21,10 @@ function postTextMessage(text){
 function appendToChat(text){
 
     if (text) {
-        chatMessage = '<li style="width:100%;">' +
-            '<div class="">' +
-            '<p>' + text + '</p>' +
+        chatMessage = '<div class="panel panel-default"><div class="panel-footer">' +
+            '' + text + '' +
             '</div>' +
-            '</li>';
-        $("ul").append(chatMessage);
+            '</div>';
+        $("#chat").append(chatMessage);
     }
 }
