@@ -6,11 +6,11 @@ services:
     restart: always
     ports:
       - 80:80
-    depends_on:
-      - chatbe
 
   chatbe:
     restart: always
     build: ./api
+    ports:
+      - 8080:8080
     expose:
       - "8080"

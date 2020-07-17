@@ -12,14 +12,14 @@ public class ChatController {
     @Autowired
     private ChatStorage chatStorage;
 
-    @CrossOrigin(origins = "http://localhost:63342")
+    @CrossOrigin
     @GetMapping("/chat")
     public String getChat() {
         return
                 chatStorage.getLatestChatMessages().get(0);
     }
 
-    @CrossOrigin(origins = "http://localhost:63342")
+    @CrossOrigin
     @PostMapping("/chat")
     public boolean postChat(@RequestBody String text) {
         return
