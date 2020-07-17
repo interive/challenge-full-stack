@@ -16,7 +16,6 @@ function postTextMessage(text){
             body: JSON.stringify(text),
         })
             .then(response => response.text())
-            .then(text => appendToChat(text))
 }
 
 function appendToChat(text){
