@@ -1,0 +1,16 @@
+version: '3'
+services:
+  chatfe:
+    build: ./fe
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - chatbe
+
+  chatbe:
+    restart: always
+    build: ./api
+    expose:
+      - "8080"
