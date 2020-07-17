@@ -16,7 +16,7 @@ public class ChatController {
     @GetMapping("/chat")
     public String getChat() {
         return
-                chatStorage.getLatestChatMessages().get(0);
+                chatStorage.getLatestChatMessages();
     }
 
     @CrossOrigin

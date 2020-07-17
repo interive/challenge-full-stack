@@ -7,5 +7,5 @@ public interface ChatStorage {
     boolean addChatMessage(String message);
 
     List<String> getAllChatMessages();
-    List<String> getLatestChatMessages();
+    String getLatestChatMessages();
 }

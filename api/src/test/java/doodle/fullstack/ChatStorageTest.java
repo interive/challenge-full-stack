@@ -14,13 +14,21 @@ public class ChatStorageTest {
     public void shouldAddMessageToStorage() {
 
         storage.addChatMessage("Hello");
-        assertTrue(storage.getLatestChatMessages().get(0).equals("Hello"));
+        assertTrue(storage.getLatestChatMessages().equals("Hello"));
+    }
+
+    @Test
+    public void shouldOnlyGetLatestMessage() {
+
+        storage.addChatMessage("Hi2");
+        storage.addChatMessage("Hi1");
+        assertTrue(storage.getLatestChatMessages().equals("Hi2"));
+        assertTrue(storage.getLatestChatMessages().equals("Hi1"));
     }
 
     @Test
     public void shouldNotFailIfChatIsEmpty() {
 
         assertTrue(storage.getLatestChatMessages() != null);
-        assertTrue(storage.getLatestChatMessages().get(0) != null);
     }
 }

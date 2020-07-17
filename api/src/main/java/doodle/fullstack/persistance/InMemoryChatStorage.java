@@ -3,19 +3,23 @@ package doodle.fullstack.persistance;
 import doodle.fullstack.ChatStorage;
 import org.springframework.stereotype.Repository;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @Repository
 public class InMemoryChatStorage implements ChatStorage {
 
     List<String> chatStorage = new LinkedList();
+    Queue<String> chatQueue = new LinkedBlockingQueue<>();
 
     @Override
     public boolean addChatMessage(String message) {
-        return chatStorage.add(message);
+        chatStorage.add(message);
+        chatQueue.add(message);
+        return true;
     }
 
     @Override
@@ -24,11 +28,11 @@ public class InMemoryChatStorage implements ChatStorage {
     }
 
     @Override
-    public List<String> getLatestChatMessages() {
+    public String getLatestChatMessages() {
         if (chatStorage.size() == 0)
-            return Arrays.asList("This chat is still empty. " +
-                    "You can be the first to say hi : )");
+            return "This chat is still empty. " +
+                    "You can be the first to say hi : )";
 
-        return Arrays.asList(chatStorage.get(chatStorage.size()-1));
+        return chatQueue.poll();
     }
 }
