@@ -20,11 +20,7 @@
     </script>
 
     <script>
-        $(document).ready(function(){
-            $('#receive_chat').click(function(){
-                fetchMessage();
-            })
-        });
+        setInterval(function(){ fetchMessage(); }, 5000);
     </script>
 </head>
 
@@ -41,8 +37,6 @@
         </div>
     </div>
     <div></div>
-    <button id="receive_chat" type="button" class="btn btn-primary">Receive chat</button>
-
     <div>
         <div class="form-group">
             <label for="post_text_area">Your message:</label>
