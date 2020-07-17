@@ -1,4 +1,5 @@
 FROM alpine:latest
-ADD target/classes/HelloWorld.class HelloWorld.class
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
 RUN apk --update add openjdk8-jre
-ENTRYPOINT ["java", "HelloWorld"]
+ENTRYPOINT ["java","-jar","/app.jar"]
