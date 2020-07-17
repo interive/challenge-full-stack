@@ -4,5 +4,8 @@ import java.util.List;
 
 public interface ChatStorage {
 
-    List<String> getChatLatestChatMessages();
+    boolean addChatMessage(String message);
+
+    List<String> getAllChatMessages();
+    List<String> getLatestChatMessages();
 }
