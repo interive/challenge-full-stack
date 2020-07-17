@@ -7,8 +7,7 @@ function fetchMessage(){
         .then(text => appendToChat(text))
 }
 
-function postTextMessage(){
-    function postText(text){
+function postTextMessage(text){
         fetch(APIpost, {
             method: 'POST',
             headers: {
@@ -18,7 +17,6 @@ function postTextMessage(){
         })
             .then(response => response.text())
             .then(text => appendToChat(text))
-    }
 }
 
 function appendToChat(text){
