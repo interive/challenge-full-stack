@@ -30,8 +30,7 @@ public class InMemoryChatStorage implements ChatStorage {
     @Override
     public String getLatestChatMessages() {
         if (chatStorage.size() == 0)
-            return "This chat is still empty. " +
-                    "You can be the first to say hi : )";
+            return null;
 
         return chatQueue.poll();
     }

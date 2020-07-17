@@ -27,8 +27,8 @@ public class ChatStorageTest {
     }
 
     @Test
-    public void shouldNotFailIfChatIsEmpty() {
+    public void shouldReturnNullIfChatisEmpty() {
 
-        assertTrue(storage.getLatestChatMessages() != null);
+        assertTrue(storage.getLatestChatMessages() == null);
     }
 }
