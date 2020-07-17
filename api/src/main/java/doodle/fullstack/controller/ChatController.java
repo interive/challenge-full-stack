@@ -3,12 +3,14 @@ package doodle.fullstack.controller;
 
 import doodle.fullstack.ChatStorage;
 import doodle.fullstack.persistance.InMemoryChatStorage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ChatController {
 
-    ChatStorage chatStorage = new InMemoryChatStorage();
+    @Autowired
+    private ChatStorage chatStorage;
 
     @CrossOrigin(origins = "http://localhost:63342")
     @GetMapping("/chat")

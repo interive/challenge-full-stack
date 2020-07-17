@@ -1,12 +1,14 @@
 package doodle.fullstack.persistance;
 
 import doodle.fullstack.ChatStorage;
+import org.springframework.stereotype.Repository;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+@Repository
 public class InMemoryChatStorage implements ChatStorage {
 
     List<String> chatStorage = new LinkedList();
