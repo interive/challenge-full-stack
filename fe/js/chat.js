@@ -1,6 +1,6 @@
-var APIget = "http://localhost:80";
+var APIget = "http://localhost:8080";
 
-function fetchMock(){
+function fetchFromAPI(){
     fetch(APIget)
         .then(response => response.json())
         .then(json => appendToChat(json.message))
