@@ -1,4 +1,4 @@
-var APIget = "http://localhost:8080";
+var APIget = "http://localhost:8080/chat";
 var APIpost = "http://localhost:8080/chat";
 
 function fetchMessage(){
